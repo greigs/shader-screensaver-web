@@ -96,6 +96,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
                     {autoChangeDuration}s
                   </span>
                 </div>
+                <p className="text-xs mt-2 text-gray-400">
+                  You can also use the <kbd className="kbd">←</kbd> and <kbd className="kbd">→</kbd> keys
+                </p>
               </div>
 
               <button

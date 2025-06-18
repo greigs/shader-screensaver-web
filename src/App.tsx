@@ -18,12 +18,28 @@ function App() {
       if (event.key === 'F11') {
         setPanelVisible(false);
       }
+
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        const shaderUrls = Object.values(shaders);
+        if (shaderUrls.length === 0) return;
+
+        const currentIndex = shaderUrls.findIndex((url) => url === shader);
+        let nextIndex;
+
+        if (event.key === 'ArrowRight') {
+          nextIndex = (currentIndex + 1) % shaderUrls.length;
+        } else {
+          nextIndex =
+            (currentIndex - 1 + shaderUrls.length) % shaderUrls.length;
+        }
+        setShader(shaderUrls[nextIndex]);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [shader, shaders]);
 
   useEffect(() => {
     const shaderModules = import.meta.glob<string>('./shaders/*.frag', {
