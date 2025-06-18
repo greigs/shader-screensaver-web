@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Maximize } from 'lucide-react';
 import ShaderBackground from './components/ShaderBackground';
 import ControlPanel from './components/ControlPanel';
 
@@ -87,6 +87,13 @@ function App() {
     }, 1000);
   };
 
+  const handleFullscreen = () => {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    }
+    setPanelVisible(false);
+  };
+
   if (!shader) {
     return (
       <div className="w-full h-screen bg-gray-900 flex items-center justify-center text-white">
@@ -133,9 +140,13 @@ function App() {
             <p className="text-white/90 text-lg drop-shadow-md">
               Procedural graphics powered by WebGL
             </p>
-            <p className="text-white/90 text-sm drop-shadow-md">
-              Press F11 in a new window, and enjoy!
-            </p>
+            <button
+              onClick={handleFullscreen}
+              className="mt-4 flex mx-auto items-center gap-2 p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors text-sm"
+            >
+              <Maximize size={16} />
+              Enter Fullscreen
+            </button>
           </div>
         </div>
       )}
