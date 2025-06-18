@@ -110,10 +110,20 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
                 Reset Animation
               </button>
 
-              <div className="text-white/60 text-xs">
-                <p className="mb-1">WebGL Shader Screensaver</p>
-                <p>Inspired by Shadertoy</p>
-              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-white/20 text-xs text-gray-400">
+              <p>Inspired by Shadertoy</p>
+              <p>
+                Built by{' '}
+                <a
+                  href="https://github.com/greigs/shader-screensaver-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  greigs
+                </a>
+              </p>
             </div>
           </div>
         )}
