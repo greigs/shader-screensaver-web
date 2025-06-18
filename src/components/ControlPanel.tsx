@@ -108,7 +108,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               </button>
 
               <div className="text-white/60 text-xs">
-                <p className="mb-1">WebGL Shader Background</p>
+                <p className="mb-1">WebGL Shader Screensaver</p>
                 <p>Inspired by Shadertoy</p>
               </div>
             </div>
