@@ -156,6 +156,20 @@ function App() {
             <p className="text-white/90 text-lg drop-shadow-md">
               Procedural graphics powered by WebGL
             </p>
+            <div className="mt-4 text-sm text-gray-400">
+              <p>Inspired by Shadertoy</p>
+              <p>
+                Built by{' '}
+                <a
+                  href="https://github.com/greigs/shader-screensaver-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  greigs
+                </a>
+              </p>
+            </div>
             <button
               onClick={handleFullscreen}
               className="mt-4 flex mx-auto items-center gap-2 p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors text-sm"
